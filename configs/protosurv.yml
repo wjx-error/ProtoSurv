@@ -1,0 +1,62 @@
+#### general settings and paths settings
+csv_path: ./dataset_csv/(project_name).csv
+data_dir: path/to/data_root_dir/tcga_brca_20x_features/graph_files/
+results_dir: ./checkpoints
+split_dir: (project_name)_41_val_patient
+which_splits: 5foldcv
+
+### model settings
+model_type: protosurv_v1
+num_gcn_layers: 4
+edge_agg: spatial
+input_dim: 1024
+
+num_proto: 8
+use_pre_proto: False
+
+cls_attr: patch_classify_type
+nr_types: 5
+
+### train settings
+gpu_ids: [0]
+num_workers: 4
+batch_size: 6
+
+comp_alpha: 0.01
+ortho_beta: 0.1
+
+bar: True
+in_memory: False
+fp16_precision: False
+
+max_epochs: 100
+lr: 0.00005
+n_classes: 1
+custom_sample: True
+
+testing: False
+gc: 2
+drop_out: True
+early_stopping: True
+label_frac: 1.0
+
+### loss and optimizer settings
+alpha_surv: 0
+bag_loss: cox
+
+opt: adam
+reg: 1e-05 # L2-regularization weight decay
+resample: 0.0  # Dropping out random patches.
+reg_type: None
+lambda_reg: 0.0001 #L1-Regularization Strength
+
+### k folds
+k: 5
+k_start: -1
+k_end: -1
+
+### other settings
+seed: 1
+weighted_sample: False
+log_data: True
+overwrite: False
