@@ -17,7 +17,7 @@ we are unable to directly publish the classifier's weights.
 As an alternative, we provide a means of obtaining patch categories using the zero-shot classifier with [CONCH](https://github.com/mahmoodlab/CONCH).
 
 After the patch extraction, 
-users can obtain patch types by first edit the args configurations in ./data_preparation/classfication_CONCH.py,
+users can obtain patch types by first edit the args configurations in `/data_preparation/classfication_CONCH.py`,
 then run the following command
 ```
 python /data_preparation/classfication_CONCH.py
