@@ -103,7 +103,7 @@ class LINKX_PROTO_oldv(torch.nn.Module):
         prototypes, _ = self.ProtoGNN.get_prototypes(x_batched, batch_mask, node_types_batched, batch, batch_num)
         prototypes = prototypes.reshape(batch_num, -1, self.dim_proto)  # b,c,k,d -> b,c*k,d
         # for comp loss
-        prototypes_comp = self.mlp_comp(prototypes)  # (b,Class*K,d) 用作损失
+        prototypes_comp = self.mlp_comp(prototypes)  # (b,Class*K,d) for comp loss
 
         ### GNN
         x_ = self.pre_fc(data.x)
