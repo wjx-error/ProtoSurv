@@ -24,23 +24,6 @@ class PatchGCN_module(torch.nn.Module):
         x_after = self.layer(x, edge_index)
         return x_after
 
-
-class GIN_module(torch.nn.Module):
-    def __init__(self, hidden_dim, i, dropout_rate):
-        super(GIN_module, self).__init__()
-        self.conv = GINConv(Seq(nn.Linear(hidden_dim, hidden_dim), GELU(), nn.Linear(hidden_dim, hidden_dim)))
-        self.norm = LayerNorm(hidden_dim, elementwise_affine=True)
-        self.act = GELU()
-        self.dropout = nn.Dropout(dropout_rate)
-
-    def forward(self, x, edge_index):
-        x = x + self.layer(x, edge_index)
-        x = self.norm(x)
-        x = self.act(x)
-        x = self.dropout(x)
-        return x
-
-
 class Attn_Net_Gated(nn.Module):
     def __init__(self, L=1024, D=256, dropout=False, n_classes=1):
         r"""

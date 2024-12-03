@@ -42,7 +42,7 @@ class LINKX_PROTO_oldv(torch.nn.Module):
         print('use pre_proto:', pre_proto)
         if pre_proto:
             print(f'model use pre prototypes from: {pre_proto_pth}')
-        ###  GNN part
+        ### GNN part
         self.pre_fc = nn.Sequential(*[nn.Linear(input_dim, hidden_dim),
                                       nn.LayerNorm(hidden_dim),
                                       GELU(),
