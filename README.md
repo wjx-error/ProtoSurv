@@ -35,7 +35,7 @@ simply follow the annotation in `graph_construction.py` and set the node categor
 
 ## Heterogeneous Graph Construction
 We follow [Patch-GCN](https://github.com/mahmoodlab/Patch-GCN) to build the graph based on the spatial relationships among patches.
-After **Patch Extraction** and **Classification** steps are finished,
+After **Patch Extraction** and **Classification** steps,
 users can obtain heterogeneous graphs by first edit the path configurations in ./data_preparation/graph_construction.py, 
 then run the following command.
 
