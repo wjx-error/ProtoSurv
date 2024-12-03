@@ -23,7 +23,7 @@ then run the following command
 python /data_preparation/classfication_CONCH.py
 ```
 Additionally, we have provided pre-prototypes calculated based on our classifier results in folder `/pre_prototypes/` 
-(five PTC classes: 0.tumor, 1.stroma, 2.infiltrate, 3.necrosis, 4.others).
+(5 PTC classes: 0.tumor, 1.stroma, 2.infiltrate, 3.necrosis, 4.others).
 According to the ablation study, 
 the model still demonstrates good performance when using these pre-extracted and fixed prototypes.
 If you want to use pre_prototypes for a quick start, please refer to the following step:
