@@ -16,8 +16,8 @@ Due to the terms for usage of UNI,
 we are unable to directly publish the classifier's weights.
 As an alternative, we provide a means of obtaining patch categories using the zero-shot classifier with [CONCH](https://github.com/mahmoodlab/CONCH).
 
-After the patch extraction is finished, 
-users can obtain patch types by first edit the args configurations in ./data_preparation/classfication_CONCH.py,
+After the patch extraction, 
+users can obtain patch types by first edit the args configurations in `/data_preparation/classfication_CONCH.py`,
 then run the following command
 ```
 python /data_preparation/classfication_CONCH.py
@@ -46,7 +46,7 @@ python data_preparation/graph_construction.py
 # Training ProtoSurv Model
 ## Make Splits
 We have provided the dataset lists and labels used for our experiments in the /dataset_csv/ folder.
-You can to split the dataset's case list into five folds for cross-validation.
+You can split the dataset's case list into five folds for cross-validation.
 
 ```
 python cross_val_split/TCGA_make_splits.py
