@@ -80,9 +80,8 @@ class LINKX_PROTO_oldv(torch.nn.Module):
             max_input_len = self.max_input_len
         else:
             max_input_len = np.inf
-        # print('max_input_len', max_input_len)
 
-        # get basic inf
+        # get basic info
         edge_index = data.edge_index
         node_types = data.patch_classify_type  # n*3
         x = data.x
@@ -97,8 +96,6 @@ class LINKX_PROTO_oldv(torch.nn.Module):
         x_batched, batch_mask = pad_batch(x, batch, max_input_len=max_input_len, seed=seed, get_mask=False)
         node_types_batched, _ = pad_batch(node_types, batch, max_input_len=max_input_len, seed=seed, get_mask=False)
         node_types_batched = node_types_batched.squeeze(2)
-        # print(x_batched.shape)
-
         # prototypes
         prototypes, _ = self.ProtoGNN.get_prototypes(x_batched, batch_mask, node_types_batched, batch, batch_num)
         prototypes = prototypes.reshape(batch_num, -1, self.dim_proto)  # b,c,k,d -> b,c*k,d
