@@ -119,7 +119,6 @@ class LINKX_PROTO_oldv(torch.nn.Module):
         prototypes, att_scores = self.proto_fusion_to_p.proto_conv(prototypes, x_context_batched, batch_mask)
 
         h = torch.mean(prototypes, dim=1)
-        # h = prototypes.view((prototypes.shape[0], self.dim_proto * self.nr_types * self.num_proto))
 
         # head
         h = self.pred_norm(h)
