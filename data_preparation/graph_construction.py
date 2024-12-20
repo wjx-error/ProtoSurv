@@ -86,8 +86,8 @@ def createDir_h5toPyG(h5_path, node_type_path, save_path):
         pbar.set_description('%s - Creating Graph' % (h5_fname[:12]))
         try:
             wsi_h5 = h5py.File(os.path.join(h5_path, h5_fname), "r")
+            h5_fname_p = h5_fname.rstrip('.pt').replace('.h5', '')
 
-            h5_fname_p = h5_fname.rstrip('.pt').rstrip('.h5')
             if node_type_path is not None:
                 cls_pth = f"{node_type_path}/{h5_fname_p}.pt"
             else:
