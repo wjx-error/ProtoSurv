@@ -6,7 +6,7 @@ import random
 import numpy as np
 
 
-def pad_nan(in_list):  # [train_list,val_list,test_list]或者[train_list,val_list]
+def pad_nan(in_list):
     lenn = [len(x) for x in in_list]
     maxx = np.max(lenn)
 
@@ -18,7 +18,6 @@ def pad_nan(in_list):  # [train_list,val_list,test_list]或者[train_list,val_li
     return in_list
 
 
-### 五折交叉用的函数
 def split_cv(all_pd, floder_num=5):
     all_censored = all_pd[all_pd['censorship'] == 0]
     all_uncensored = all_pd[all_pd['censorship'] == 1]
@@ -50,7 +49,7 @@ def split_cv(all_pd, floder_num=5):
     return floder
 
 
-def get_train_val_test_from_split(floder, i=0, floder_num=5):  # i是第几个split 3:1:1
+def get_train_val_test_from_split(floder, i=0, floder_num=5):
     train_list, val_list, test_list = [], [], []
     for j in range(floder_num):
         if j == i:
@@ -62,7 +61,7 @@ def get_train_val_test_from_split(floder, i=0, floder_num=5):  # i是第几个sp
     return train_list, val_list, test_list
 
 
-def get_train_val_from_split(floder, i=0, floder_num=5):  # i是第几个split 4:1
+def get_train_val_from_split(floder, i=0, floder_num=5):
     train_list, val_list = [], []
     for j in range(floder_num):
         if j == i:
