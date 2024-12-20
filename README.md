@@ -30,7 +30,7 @@ If you want to use pre_prototypes for a quick start, please refer to the followi
 1. There is no need to perform the **Patch Classification** step when training the model with pre-prototypes, 
 so please skip the Patch Classification step.
 2. During **Heterogeneous Graph Construction** step, 
-simply follow the annotation in `graph_construction.py` and set the node category path to None to construct the graph directly. 
+simply follow the annotation in `graph_construction.py` and set the node category path to **None** to construct the graph directly. 
 3. When run `train.py`, set the "use_pre_proto" parameter to "True" in the `/configs/protosurv.yml` configuration file.
 
 ## Heterogeneous Graph Construction
