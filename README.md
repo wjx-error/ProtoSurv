@@ -1,4 +1,4 @@
-This repository provides the Pytorch implementations for "Leveraging Tumor Heterogeneity: Heterogeneous Graph Representation Learning for Cancer Survival Prediction in Whole Slide Images".
+This repository provides the Pytorch implementations for NeurIPS 2024 paper "Leveraging Tumor Heterogeneity: Heterogeneous Graph Representation Learning for Cancer Survival Prediction in Whole Slide Images".
 
 Paper can be found [here](https://proceedings.neurips.cc/paper_files/paper/2024/hash/760341adc5632de3f1cf2e8d22215a93-Abstract-Conference.html).
 # Data Preparation
